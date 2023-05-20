@@ -20,6 +20,20 @@ public class Comentario {
 		this.usuario = usuario;
 		this.fecha = fecha;
 	}
+	
+	public String tamanioComentario(String comentario) {
+		
+        String texto = comentario;
+        String respuesta = "";
+
+        if (texto.length() < 400) {
+            respuesta = "El texto tiene menos de 400 caracteres.";
+        } else {
+            respuesta = "El texto tiene 400 o más caracteres.";
+        }
+		
+		return  respuesta;
+	}
 
 	public int getId() {
 		return id;
