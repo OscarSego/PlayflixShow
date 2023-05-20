@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mi sitio de películas</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        
+        function pintarDato(datos){
+
+            let codigoHTML = "";
+
+            codigoHTML += "<p>" + datos.nombre + "</p>";
+
+            document.getElementById("nombreUsuario").innerHTML = codigoHTML;
+
+        }
+			
+        window.onload = function(){
+        	
+            fetch('Listado')
+                .then(res => res.json())
+                .then(res => pintarDato(res));
+            
+            document.getElementById("cerrarSesion").addEventListener("click", function() {
+                // Enviar una solicitud al servidor para cerrar la sesión del usuario
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "CerrarSesion", true);
+                xhr.send();
+                // Redirigir al usuario a la página de inicio después de cerrar sesión
+                window.location.href = "pruebaCliente.html";
+              });
+      
+        
+         }
+        </script>
+  </head>
+  <body>
+    <header>
+      <h1>PlayflixShow</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="peliculasU.html">Peliculas</a></li>
+        <li><a href='formRegistro.html'>Inicio Sesion</a>
+      </ul>
+    </nav>
+    <section>
+      <p id="nombreUsuario" class="usuario"><span id="usuario"></span></p>
+      <h2>Noticias sobre peliculas</h2>
+      <article>
+        <h3>Spider-Man: Sin camino a casa</h3>
+        <img src="imagenes/SpiderManNoWayHome.jpg" alt="Spider-Man">
+        <p>La nueva pelicula de Spider-Man ha sido un exito en taquilla, recaudando mas de $1 billon en su primer fin de semana de estreno.</p>
+      </article>
+      <article>
+        <h3>El rey Leon</h3>
+        <img src="imagenes/ReyLeon.jpg" alt="El rey León">
+        <p>Disney ha anunciado que está trabajando en una nueva version de El rey Leon, que sera una secuela directa del clasico animado.</p>
+      </article>
+      <article>
+        <h3>El Batman</h3>
+        <img src="imagenes/TheBatman.jpg" alt="El Batman">
+        <p>El director Matt Reeves ha revelado que su nueva pelicula de Batman sera una historia de origen que explorara los primeros años de Bruce Wayne como el Caballero de la Noche.</p>
+      </article>
+    </section>
+    <footer>
+      <p>© 2023 PlayflixShow. Todos los derechos reservados.</p>
+      <p id="usuario"></p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

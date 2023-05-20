@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mi sitio de películas</title>
+    <link rel="stylesheet" href="css/index.css">
+        <script>
+        
+    
+    var ruta = "http://localhost:8080/PlayflixShow/imagenes/";
+    
+    const ajax = new XMLHttpRequest();
+    
+    function llamada(){
+    	ajax.open("GET", "Puntuacion", true);
+    	ajax.onreadystatechange = dameResponse;
+    	ajax.send();
+    }
+    
+    function dameResponse(){
+    	if(ajax.readyState == 4){
+    		if(ajax.status == 200){
+    			let miPunt = "<p> La Puntuacion de la pelicula segun lus usuarios es: " + ajax.responseText + "</p>";
+    			document.getElementById("puntuacion").innerHTML = miPunt; 
+    		}
+    	}
+    }
+    
+    function obtenerPeliculas() {
+ 		
+ 		let nombre = document.getElementById("nombre").value;
+
+     	fetch("BuscarPelicula?nombrePelicula="+nombre)
+         	.then(res => res.json())
+         	.then(res => pintarPeli(res));
+ 	}
+	
+    function pintarPeli(datos){
+    	
+    	let codigoHTML = "";
+    	
+    	codigoHTML += "<img src='imagenes/"+datos.imagenPeliculas+"'>";
+    	
+
+        document.getElementById("Peliculas").innerHTML = codigoHTML;  
+        
+        llamada();
+
+    }
+
+        function pintarDato(datos){
+
+            let listaSaludos = "";
+
+                listaSaludos += "<p>" + datos.nombre + "</p>";
+
+            document.getElementById("nombreUsuario").innerHTML = listaSaludos;
+
+        }
+			
+        window.onload = function(){
+        	
+            
+             fetch('Peliculas')
+            	.then(res => res.json())
+            	.then(res => pintar(res));
+             
+
+            
+            document.getElementById("cerrarSesion").addEventListener("click", function() {
+                // Enviar una solicitud al servidor para cerrar la sesiÃ³n del usuario
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "CerrarSesion", true);
+                xhr.send();
+                // Redirigir al usuario a la pÃ¡gina de inicio despuÃ©s de cerrar sesiÃ³n
+                window.location.href = "index.html";
+              });
+        
+            
+        
+         }
+        </script>
+  </head>
+  <body>
+    <header>
+      <h1>PlayflixShow</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="peliculas.html">Peliculas</a></li>
+        <li><a href="OpcionesUser.html">Comentarios</a></li>
+        <input type="text" placeholder="Buscar peliculas...">
+        <button type="submit">Buscar</button>
+		
+		<li id="cerrarSesion" class="cerrarSesion"><a id="cerrarSesion" href="#">Cerrar sesion</a></li>
+
+      </ul>
+    </nav>
+    <section>
+      <p id="nombreUsuario" class="usuario"><span id="usuario"></span></p>
+	  <h2>Formulario Peliculas</h2>
+	  <div class='peliculasForm'>
+	  	<form action="InsertarPuntuacion" method="post" class="formulario-imagen">
+	  		<input type="text" name="nombrePelicula" id="nombrePelicula" placeholder="Nombre Pelicula">
+	  		<br>
+	  		<input type="text" name="puntuacion" id="puntuacion" placeholder="Puntuacion Pelicula">
+	  		<br>
+	  		<input type="text" name="Usuario" id="Usuario" placeholder="Nombre Usuario">
+      		<button type="submit">Subir</button>
+    	</form>
+	  </div>
+    </section>
+    <footer>
+      <p>© 2023 PlayflixShow. Todos los derechos reservados.</p>
+      <p id="usuario"></p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
