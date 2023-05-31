@@ -30,7 +30,7 @@ import modelo.Usuario;
 public class SubirImagen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private String pathFiles = "C:\\Users\\ERAZER\\Java\\PlayflixShow\\src\\main\\webapp\\imagenes";
+	private String pathFiles = "C:\\Users\\ERAZER\\git\\PlayflixShow\\PlayflixShow\\src\\main\\webapp\\imagenes";
 	private File uploads = new File(pathFiles);
 
     /**

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 /**
  * <h2> Clase Usuario </h2>
- * <p> Se pueden crar objetos de peliculas con el id, nombre de la pelicula, nombre del usuario, imagen de las peliculas y la puntucion <p>
+ * <p> Se pueden crar objetos de peliculas con el id, nombre de la pelicula, nombre del usuario, imagen de las peliculas y la puntucion </p>
  * @author Oscar Sanchez Garcia
  * @version v.1_2023
  * @since 04-2023

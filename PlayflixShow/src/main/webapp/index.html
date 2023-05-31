@@ -1,38 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mi sitio de películas</title>
+    <title>PlayflixShow</title>
     <link rel="stylesheet" href="css/index.css">
-    <script>
-        
-        function pintarDato(datos){
-
-            let codigoHTML = "";
-
-            codigoHTML += "<p>" + datos.nombre + "</p>";
-
-            document.getElementById("nombreUsuario").innerHTML = codigoHTML;
-
-        }
-			
-        window.onload = function(){
-        	
-            fetch('Listado')
-                .then(res => res.json())
-                .then(res => pintarDato(res));
-            
-            document.getElementById("cerrarSesion").addEventListener("click", function() {
-                // Enviar una solicitud al servidor para cerrar la sesión del usuario
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "CerrarSesion", true);
-                xhr.send();
-                // Redirigir al usuario a la página de inicio después de cerrar sesión
-                window.location.href = "pruebaCliente.html";
-              });
-      
-        
-         }
-        </script>
   </head>
   <body>
     <header>

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 /**
  * <h2> Clase Usuario </h2>
- * <p> Se pueden crear usuarios que tiene la web, insertar en la base dedatos y validar si existen <p>
+ * <p> Se pueden crear usuarios que tiene la web, insertar en la base dedatos y validar si existen </p>
  * @author Oscar Sanchez Garcia
  * @version v.1_2023
  * @since 04-2023

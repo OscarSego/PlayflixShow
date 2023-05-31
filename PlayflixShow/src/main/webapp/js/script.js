@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Mi sitio de pelÃ­culas</title>
-    <link rel="stylesheet" href="css/index.css">
-    <script>
-        
-    
+  // Ruta para guardar las imagenes
+      
     var ruta = "http://localhost:8080/PlayflixShow/imagenes/";
+    
+    // La siguiente parte del codigo permitira recoger la puntuacion y visualizarla
     
     const ajax = new XMLHttpRequest();
     
@@ -24,6 +20,9 @@
     		}
     	}
     }
+    
+    //Esta funcion nos permite recoger el nombre de la pelicula del buscador y visualizarla
+    // Se llama al servlet para buscarla
     
     function obtenerPeliculas() {
  		
@@ -47,15 +46,19 @@
 
     }
 
+		// Funcion para pintar el nombre del usuario que ha iniciado sesion
+		
         function pintarDato(datos){
 
-            let listaSaludos = "";
+            let listaNombre = "";
 
-                listaSaludos += "<p>" + datos.nombre + "</p>";
+                listaNombre += "<p>" + datos.nombre + "</p>";
 
-            document.getElementById("nombreUsuario").innerHTML = listaSaludos;
+            document.getElementById("nombreUsuario").innerHTML = listaNombre;
 
         }
+        
+        // funcion que permite pintar el listado de peliculas
         
         function pintar(datos){
 
@@ -67,55 +70,32 @@
 
             document.getElementById('Peliculas').innerHTML = codigoHTML;
         }
-			
+		
+		// Aqui podremos cargar en la pagina los datos sin necesidad de dar a ningun boton
+		
         window.onload = function(){
+	
+			// Llama a servlet Listado y a la funcion pintarDato
         	
             fetch('Listado')
                 .then(res => res.json())
                 .then(res => pintarDato(res));
+                
+             // Llama a servlet Peliculas y a la funcion pintar
             
              fetch('Peliculas')
             	.then(res => res.json())
             	.then(res => pintar(res));
              
-
-            
-            document.getElementById("cerrarSesion").addEventListener("click", function() {
-               
-                var ajax = new XMLHttpRequest();
-                ajax.open("GET", "CerrarSesion", true);
-                ajax.send();
-                
-                window.location.href = "index.html";
-              });
-        
-            
+  			// Nos permitira cerrar sesion
+  			
+             document.getElementById("cerrarSesion").addEventListener("click", function() {
+                 
+                 const ajax = new XMLHttpRequest();
+                 ajax.open("GET", "CerrarSesion", true);
+                 ajax.send();
+                 
+                 window.location.href = "index.html";
+               });  
         
          }
-        </script>
-  </head>
-  <body>
-    <header>
-      <h1>PlayflixShow</h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="peliculasU.html">Peliculas</a></li>
-        <li><a href='formRegistro.html'>Inicio Sesion</a>
-      </ul>
-    </nav>
-    <section>
-      <p id="nombreUsuario" class="usuario"><span id="usuario"></span></p>
-	  <h2>Peliculas</h2>
-	  <p id="puntuacion"> </p>
-	  <div class="imagenes-peliculas" id='Peliculas'>
-	  </div>
-    </section>
-    <footer>
-      <p>© 2023 PlayflixShow. Todos los derechos reservados.</p>
-      <p id="usuario"></p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
-</html>

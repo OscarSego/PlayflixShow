@@ -51,7 +51,7 @@ public class InsertarPuntuacion extends HttpServlet {
 		PuntuacionPelicula s = new PuntuacionPelicula(nombre,puntuacion,user);
 		try {
 			s.insertarBD();
-			response.sendRedirect("index.html");
+			response.sendRedirect("paginaInicio.html");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

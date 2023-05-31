@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PlayflixShow</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>PlayflixShow</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="paginaInicio.html">Inicio</a></li>
+        <li><a href="peliculas.html">Peliculas</a></li>
+        <li><a href="OpcionesUser.html">Opciones Usuario</a></li>
+        <input type="text" placeholder="Buscar peliculas...">
+        <button type="submit">Buscar</button>
+		
+		<li id="cerrarSesion" class="cerrarSesion"><a id="cerrarSesion" href="#">Cerrar sesion</a></li>
+
+      </ul>
+    </nav>
+    <section>
+      <p id="nombreUsuario" class="usuario"><span id="usuario"></span></p>
+	  <h2>Formulario Peliculas</h2>
+	  <p id="puntuacion"> </p>
+	  <div class="imagenes-peliculas" id='Peliculas'>
+	  </div>
+	  <div class='peliculasForm'>
+	  	<form action="SubirImagen" method="post" enctype="multipart/form-data" class="formulario-imagen">
+	  		<input type="text" name="nombrePelicula" id="nombrePelicula" placeholder="Nombre Pelicula">
+	  		<br>
+	  		<input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre Usuario">
+	  		<br>
+	  		<input type="text" name="puntuacion" id="puntuacion" placeholder="puntuacion">
+      		<label for="imagen">Subir imagen:</label>
+      		<input type="file" name="imagenPeliculas" id="imagenPeliculas">
+      		<button type="submit">Subir</button>
+    	</form>
+	  </div>
+    </section>
+    <footer>
+      <p>© 2023 PlayflixShow. Todos los derechos reservados.</p>
+      <p id="usuario"></p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

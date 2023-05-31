@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
+/* Estilo para el cuerpo */
+
 body {
     background-color: rgb(201, 76, 76)
 }
+
+/* Estilos para el formulario */
 
 .form-register {
     width: 400px;

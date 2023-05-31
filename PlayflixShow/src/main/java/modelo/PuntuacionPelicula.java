@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * <h2> Clase Usuario </h2>
- * <p> Se pueden crear objetos con el id, nombre de la pelicula, puntuacion y usuario <p>
+ * <p> Se pueden crear objetos con el id, nombre de la pelicula, puntuacion y usuario </p>
  * @author Oscar Sanchez Garcia
  * @version v.1_2023
  * @since 04-2023
@@ -86,7 +86,7 @@ public class PuntuacionPelicula {
 	 * Metodo con un parametros
 	 * <p> Calcula la puntuacion de las peliculas. Se pasa el nombre de la pelicula y recoge todas las puntuaciones y hace una media </p>
 	 * @param nombrePelicula
-	 * @return <ul><li> Devuelve la  puntuacio <il></ul>
+	 * @return <ul><li> Devuelve la  puntuacio</li></ul>
 	 * @throws SQLException
 	 */
 	
@@ -128,7 +128,7 @@ public class PuntuacionPelicula {
 	/**
 	 * Metodo
 	 * <p> Devuelve el id </p>
-	 * @return <ul><li> Devuelve el id </il></ul>
+	 * @return <ul><li> Devuelve el id</li></ul>
 	 */
 
 	public int getId() {
@@ -146,8 +146,8 @@ public class PuntuacionPelicula {
 	
 	/**
 	 * Metodo
-	 * <p> Devuelve el nombre de la pelicula
-	 * @return <ul><li> Devuelve el nombre de la pelicula </il></ul>
+	 * <p> Devuelve el nombre de la pelicula </p>
+	 * @return <ul><li> Devuelve el nombre de la pelicula</li></ul>
 	 */
 
 	public String getNombrePelicula() {
@@ -166,7 +166,7 @@ public class PuntuacionPelicula {
 	/**
 	 * Metodo
 	 * <p> Devuelve la puntuacion de la pelicula </p>
-	 * @return <ul><li> Devuelve la puntuacion de la pelicula </il></ul>
+	 * @return <ul><li> Devuelve la puntuacion de la pelicula</li></ul>
 	 */
 
 	public int getPuntuacion() {
@@ -185,7 +185,7 @@ public class PuntuacionPelicula {
 	/**
 	 * Metodo
 	 * <p> Devuelveel usuario que ha puesto la puntuacion </p>
-	 * @return <ul><li> Devuelve el usuario </il></ul>
+	 * @return <ul><li> Devuelve el usuario</li></ul>
 	 */
 
 	public String getUsuario() {

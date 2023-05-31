@@ -12,7 +12,7 @@ import com.mysql.cj.protocol.Resultset;
 
 /**
  * <h2> Clase DaoDB </h2>
- * <p> Esta clase nos permite trabajar realizando consultas a la base de datos <p>
+ * <p> Esta clase nos permite trabajar realizando consultas a la base de datos </p>
  * @author Oscar Sanchez Garcia
  * @version v.1_2023
  * @since 04-2023

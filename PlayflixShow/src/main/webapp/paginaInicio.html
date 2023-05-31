@@ -1,49 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mi sitio de películas</title>
+    <title>PlayflixShow</title>
     <link rel="stylesheet" href="css/index.css">
-    <script>
-        
-        function pintarDato(datos){
-
-            let codigoHTML = "";
-
-            codigoHTML += "<p>" + datos.nombre + "</p>";
-
-            document.getElementById("nombreUsuario").innerHTML = codigoHTML;
-
-        }
-			
-        window.onload = function(){
-        	
-            fetch('Listado')
-                .then(res => res.json())
-                .then(res => pintarDato(res));
-            
-            document.getElementById("cerrarSesion").addEventListener("click", function() {
-                // Enviar una solicitud al servidor para cerrar la sesión del usuario
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "CerrarSesion", true);
-                xhr.send();
-                // Redirigir al usuario a la página de inicio después de cerrar sesión
-                window.location.href = "pruebaCliente.html";
-              });
-      
-        
-         }
-        </script>
+    <script src="script.js"></script>
   </head>
   <body>
     <header>
-      <h1>Mi sitio de películas</h1>
+      <h1>PlayflixShow</h1>
     </header>
     <nav>
       <ul>
         <li><a href="paginaInicio">Inicio</a></li>
         <li><a href="peliculas.html">Peliculas</a></li>
         <li><a href="OpcionesUser.html">Opciones Usuari</a></li>
-        <input type="text" placeholder="Buscar películas...">
+        <input type="text" placeholder="Buscar peliculas...">
         <button type="submit">Buscar</button>
 		
 		<li id="cerrarSesion" class="cerrarSesion"><a id="cerrarSesion" href="index.html">Cerrar sesion</a></li>
@@ -52,28 +23,28 @@
     </nav>
     <section>
       <p id="nombreUsuario" class="usuario"><span id="usuario"></span></p>
-      <h2>Noticias sobre películas</h2>
+      <h2>Noticias sobre peliculas</h2>
       <p id="puntuacion"> </p>
 	  <div class="imagenes-peliculas" id='Peliculas'>
 	  </div>
       <article>
         <h3>Spider-Man: Sin camino a casa</h3>
-        <img src="https://via.placeholder.com/300x200.png?text=Imagen+de+Spider-Man" alt="Spider-Man">
-        <p>La nueva pelicula de Spider-Man ha sido un éxito en taquilla, recaudando más de $1 billon en su primer fin de semana de estreno.</p>
+        <img src="imagenes/SpiderManNoWayHome.jpg" alt="Spider-Man">
+        <p>La nueva pelicula de Spider-Man ha sido un exito en taquilla, recaudando mas de $1 billon en su primer fin de semana de estreno.</p>
       </article>
       <article>
         <h3>El rey Leon</h3>
-        <img src="https://via.placeholder.com/300x200.png?text=Imagen+de+El+rey+León" alt="El rey León">
-        <p>Disney ha anunciado que está trabajando en una nueva versión de El rey León, que sera una secuela directa del clásico animado.</p>
+        <img src="imagenes/ReyLeon.jpg" alt="El rey León">
+        <p>Disney ha anunciado que está trabajando en una nueva versión de El rey Leon, que sera una secuela directa del clasico animado.</p>
       </article>
       <article>
         <h3>El Batman</h3>
-        <img src="https://via.placeholder.com/300x200.png?text=Imagen+de+El+Batman" alt="El Batman">
+        <img src="imagenes/TheBatman.jpg" alt="El Batman">
         <p>El director Matt Reeves ha revelado que su nueva película de Batman será una historia de origen que explorará los primeros años de Bruce Wayne como el Caballero de la Noche.</p>
       </article>
     </section>
     <footer>
-      <p>© 2023 Mi sitio de películas. Todos los derechos reservados.</p>
+      <p>© 2023 Mi sitio de peliculas. Todos los derechos reservados.</p>
       <p id="usuario"></p>
     </footer>
     <script src="script.js"></script>

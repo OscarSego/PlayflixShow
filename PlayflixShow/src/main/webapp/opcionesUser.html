@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PlayflixShow</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>PlayflixShow</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="paginaInicio.html">Inicio</a></li>
+        <li><a href="peliculas.html">Peliculas</a></li>
+        <li><a href="OpcionesUser.html">Opciones Usuario</a></li>
+        <input type="text" name="nombre" id="nombre" placeholder="Buscar peliculas...">
+        <button onclick="obtenerPeliculas()">Buscar</button>
+		
+		<li id="cerrarSesion" class="cerrarSesion"><a id="cerrarSesion" href="#">Cerrar sesion</a></li>
+
+      </ul>
+    </nav>
+    <section>
+	  <h2>Subir imagen</h2>
+	  <p id="puntuacion"> </p>
+	  <div class="imagenes-peliculas" id='Peliculas'>
+	  </div>
+	  <p id="nombreUsuario" class="usuario"><span id="usuario"></span></p>
+      <p>Para compartir tus imagenes favoritas, haz clic en el siguiente enlace:</p>
+      <a href="SubirImagen.html">Subir imagenes</a>
+
+      <h2>Puntuacion</h2>
+      <p>Si quieres dar tu opinion sobre una pelicula, puedes añadir una puntuacion en la siguiente seccion:</p>
+      <a href="Puntuacion.html">puntuacion</a>
+    </section>
+    <footer>
+      <p>A© 2023 PlayflixShow. Todos los derechos reservados.</p>
+      <p id="usuario"></p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
